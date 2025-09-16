@@ -230,8 +230,9 @@ is.na(df$Hospitals)
 ```{r}
 #| eval: true
 #| echo: true
-df$"Total_Other_Services" <- sum(df$'Other.Professionals..Dental'+ df$'Other.Professionals..Vision' + df$'Other.Professionals.Other..Services')
+df$"Total_Other_Services" <- df$Dental+ df$Vision + df$'Other Professionals'
 
+head(df)
 str(df)
 ```
 
@@ -246,6 +247,7 @@ str(df)
 #| eval: true
 #| echo: true
 df <-data.frame(df,df2 = "Prescribed Drugs")
+head(df)
 ```
 
 
@@ -257,7 +259,8 @@ df <-data.frame(df,df2 = "Prescribed Drugs")
 #| eval: true
 #| echo: true
 
-sum(df$hospitals, df$year == 1983)
+sum(df$hospitals, df$years==1983)
+
 ```
 
 

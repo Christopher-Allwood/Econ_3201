@@ -1,0 +1,19 @@
+n =(1000)
+u1 <- runif(n/2,0,1)
+u2 <- runif(n/2,0,1)
+z1 <- sqrt(-2*log(u1))*cos(2* 3.14 * u2)
+z2 <- sqrt(-2*log(u1))*sin(2* 3.14 * u2)
+z <-matrix(z1&z2,ncol = 2)
+mu <-c(5)
+sigma <-c(2)
+x <-c(mu + sigma *z)
+mean.x <-mean(x)
+sd.mean <-sd(x)
+hist(x,
+     freq = FALSE,
+     ylab = "Density",
+     xlab = "x")
+
+curve(dnorm(x, mean = mu, sd = sigma), 
+      col = "red", lwd = 2, add = TRUE)
+?sum
